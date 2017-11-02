@@ -21,14 +21,15 @@
       <div class="starter-template">
         <h1>Chercher un pays</h1>
 		<form method="post" action="pays"> 
-		     <p> Choix d'un pays </p>
-		      <SELECT name="name" size="1">
-		      	 <c:forEach var="p"  items="${pays}" >
-		          <option value="${p.nomPays}"> ${p.nomPays} </option>
-				</c:forEach>
-		      </SELECT>  
-		      <BR></BR>      
-		    <input type='submit'   value="Envoyer"><br/>
+			<div class="form-group">
+			    <label for="pays">Choix d'un pays</label>
+			    <select class="form-control" id="pays" name="name" size="1">
+			      	<c:forEach var="p"  items="${pays}" >
+		          		<option value="${p.nomPays}"> ${p.nomPays} </option>
+					</c:forEach>
+			    </select>
+			  </div>    
+		  	  <input type="submit" class="btn btn-primary" value="Envoyer"><br/>
 		  </form>      
 		</div>
     </div><!-- /.container -->
