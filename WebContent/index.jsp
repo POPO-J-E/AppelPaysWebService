@@ -1,23 +1,43 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Mes Pays</title>
+
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link href="css/starter-template.css" rel="stylesheet">
 </head>
 <body>
-<h1>Mes Pays</h1>
-  <form method="post" action="pays">
-     <p> Choix d'un pays </p>
-      <SELECT name="name" size="1">
-	      <c:forEach var = "p" items = "${pays}">
-	         <OPTION><c:out value = "${p.nomPays}"/></OPTION>
-	      </c:forEach>
-      </SELECT>  
-      <BR></BR>      
-    <input type='submit'   value="Choisir"><br/>
-  </form>
+
+    <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
+      <a class="navbar-brand" href="/AppelPaysWebService">Mes Pays</a>
+    </nav>
+
+    <div class="container">
+
+      <div class="starter-template">
+        <h1>Chercher un pays</h1>
+		<form method="post" action="pays"> 
+		     <p> Choix d'un pays </p>
+		      <SELECT name="name" size="1">
+		      	 <c:forEach var="p"  items="${pays}" >
+		          <option value="${p.nomPays}"> ${p.nomPays} </option>
+				</c:forEach>
+		      </SELECT>  
+		      <BR></BR>      
+		    <input type='submit'   value="Envoyer"><br/>
+		  </form>      
+		</div>
+    </div><!-- /.container -->
+    
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/popper.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+</body>
+<body>
+ 
 </body>
 </html>
